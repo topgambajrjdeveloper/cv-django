@@ -1,1 +1,1 @@
-web: gunicorn devcordenadas.wsgi --log-file -
+web: gunicorn proyectoweb.wsgi --log-file -

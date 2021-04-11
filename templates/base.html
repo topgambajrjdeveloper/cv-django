@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Este es el sitio portafolio de DevCordenadas" />
+    <meta name="keywords" content="Desarrollo, APP`s, Blog, Django, Python, Reactjs, ReactNative, Flutter" />
+    <meta name="author" content="@DCordenadas" />
+    <link rel="shortcut icon" href="{% static 'img/favicon.svg' %}">
+    <meta name="theme-color" content="#03dedf">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;1,300&display=swap"
+        rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css '%}">
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.lineicons.com/2.0/LineIcons.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css '%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css '%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css '%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/color/azure.css '%}" id="option-color">
+    <title>{% block title %}{% endblock %} | DevCordenadas</title>
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="{% static 'img/julifoto.png'%}">
+    <meta name="twitter:site" content="@DCordenadas">
+    <meta name="twitter:creator" content="@DCordenadas"">
+    <meta name="twitter:title" content="DevCordenadas">
+    <meta name="twitter:description" content="Este es el sitio portafolio de DevCordenadas">
+    <meta name="twitter:image" content="{% static 'img/julifoto.png'%}">
+    
+    <!-- Facebook -->
+    <meta property="og:url" content="https://dev-cordenadas.xyz/">
+    <meta property="og:title" content="DevCordenadas">
+    <meta property="og:description" content="Este es el sitio portafolio de DevCordenadas">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{% static 'img/julifoto.png'%}">
+    <meta property="og:image:secure_url" content="{% static 'img/julifoto.png'%}">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+</head>
+
+<body data-spy="scroll" data-target="#scrollspy" data-offset="61">
+    {% include "layouts/preloader.html" %}
+    {% include "shared/navbar.html" %}
+    {% include "shared/setting.html" %}
+
+    {% block content %}
+    
+    {% endblock content %}
+
+    {% include "shared/footer.html" %}
+    <!--   Return To Top  -->
+    <a class="return-to-top d-inline-block" href="javascript:void(0)"><i class="fas fa-arrow-up"></i></a>
+
+    <div class="mouse-cursor cursor-effect"></div>
+    <div class="mouse-cursor cursor"></div>
+
+    <script src="{% static 'js/jquery-3.5.1.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.js'%}"></script>
+    <script src="{% static 'js/typed.js'%}"></script>
+    <script src="{% static 'js/jquery.countTo.js'%}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js'%}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/jquery.easing.min.js'%}"></script>
+    <script src="{% static 'js/westin.js'%}"></script>
+</body>
+
+</html>

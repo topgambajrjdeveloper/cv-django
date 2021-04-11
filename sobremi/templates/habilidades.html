@@ -1,0 +1,42 @@
+{% load static %}
+{% block content %}
+<!--   Skills Start   -->
+<div class="skills-01">
+    <div class="row pt-6">
+        <div class="col-lg-6">
+            <div class="title-box text-left">
+                <h6>Mis Habilidades</h6>
+                <h3>He podido experimentar y desarrollar habilidades con este tipo de aprendizaje .</h3>
+            </div>
+            <p class="mb-0">Estaba haciendo todo lo que estaba en mi poder para brindarme todas las experiencias
+                para brindar productos rentables y
+                de alta calidad para satisfacer a mis clientes en todo el mundo.</p>
+        </div>
+        <div class="col-lg-6">
+            <div id="skills">
+                {% if habilidades %}
+                {% for habilidad in habilidades %}
+                <div class="col-lg-12 skill-box">
+                    <div class="skillbar clearfix " data-percent="{{habilidad.percentaje}}%">
+                        <div class="skillbar-title">
+                            <span>{{habilidad.lenguaje}}</span>
+                        </div>
+                        <div class="skillbar-bar"></div>
+                        <div class="skill-bar-percent">
+                            {{habilidad.percentaje}}%
+                            <div class="arrow"></div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="title-box text-left">
+                    <h5>No hay habilidades</h5>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<!--    Skills End    -->
+{% endblock content %}

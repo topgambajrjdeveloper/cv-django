@@ -1,0 +1,30 @@
+{% load static %}
+{% block content %}
+<h5 class="title-resume text-center">
+        Certificaciones
+    </h5>
+    <div class="timeline-boxes">
+        <!--    Items  -->
+        {% for certificacion in certificaciones %}
+        {{certficacion.titulo}}
+        {% endfor %}
+        <div class="timeline-boxe">
+            <div class="timeline-icon"></div>
+            <div class="timeline-contents">
+                <div class="time-line-header">
+                    <h6 class="timeline-title">{{certificacion.titulo}}</h6>
+                    <p class="timeline-year">{{certificacion.fecha}}</p>
+                </div>
+                <div class="timeline-content">
+                    <p class="mb-0">Certificación de desarrollador, que representa aproximadamente 300
+                        horas de trabajo de curso.</p>
+                    <a class="timeline-year"
+                        href="https://freecodecamp.org/certification/fcc87d83ff6-2c46-41f9-8eff-23c40cd1f727/responsive-web-design"
+                        target="_blank">Ver</a>
+                </div>
+            </div>
+        </div>
+         
+    </div>
+
+{% endblock content %}

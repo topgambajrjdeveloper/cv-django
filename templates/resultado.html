@@ -1,0 +1,25 @@
+{% block content %}
+{% block title %}Resultados{% endblock %}
+{% load static %}
+    <div class="container">
+        <p>Estas buscando :
+            <strong>
+                {{query}}
+            </strong>
+        </p>
+        {% if entradas %}
+
+        <p>Esto es lo que hemos entracontrado en la busqueda realizada: {{entradas|length}} entradas </p>
+
+        <ul>
+            {% for entrada in entradas %}
+            <li>
+                {{entradas.blogTag}} &nbsp; {{entradas.blogTitulo}}
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No has introducido nada.</p>
+        {%endif%}
+    </div>
+{% endblock content %}

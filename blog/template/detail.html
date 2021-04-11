@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% block title %}{{post.titulo}}{% endblock %}
+{% load static %}
+{% block content %}
+<!--   Blog Start   -->
+<!--    Hero Start    -->
+<section id="hero" class="blog-page-header py-6" style="background: url('{{post.thumbnails.url}}') no-repeat center">
+    <div class="home-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="header-title"></h2>
+                    <div class="entry-meta">
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <i class="lni lni-calendar"></i>
+                                    {{post.created|timesince}}
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="{% url 'SobreMi' %}">
+                                    <i class="lni lni-user"></i>
+                                    {{post.autor}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--    Hero End    -->
+
+<!--  blog Single Start  -->
+<section class="blog-single py-6">
+    <div class="container">
+        <div class="row row-sticky">
+            <div class="col-lg-8 post-content">
+                <div class="single-post">
+                    <div class="entry-image">
+                        <img src="{{post.thumbnails.url}}" alt="/">
+                    </div>
+                    <div class="entry-content">
+                        <p class="mb-0">{{post.description}}</p>
+                        <img src="{{post.thumbnails_second.url}}" alt="/">
+                    </div>
+                </div>
+                <!--   Comments Start  -->
+               <!-- <div class="comments mt-5">
+                    <h3>Comments</h3>
+                    <ul class="list-inline comments-list">
+                       
+                        <li class="list-inline-item">
+                            <div class="comment-wrap">
+                                <div class="image-comment">
+                                    <img src="http://placehold.it/125x125" alt="/">
+                                </div>
+                                <div class="comment-content">
+                                    <div class="comment-author">
+                                        John Doe
+                                        <p class="text-muted">
+                                            <a href="#">June 24, 2020 at 10:45 am</a>
+                                        </p>
+                                    </div>
+                                    <p class="mb-0">In a professional context it often happens that private or corporate
+                                        clients corder a publication to be made.In a professional context it often
+                                        happens that private.</p>
+                                    <a href="#" class="comment-reply-link">
+                                        <i class="lni lni-reply"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <ul class="children">
+                                <li class="list-inline-item">
+                                    <div class="comment-wrap">
+                                        <div class="image-comment">
+                                            <img src="http://placehold.it/125x125" alt="/">
+                                        </div>
+                                        <div class="comment-content">
+                                            <div class="comment-author">
+                                                Mary Jane
+                                                <p class="text-muted">
+                                                    <a href="#">June 25, 2020 at 12:45 am</a>
+                                                </p>
+                                            </div>
+                                            <p class="mb-0">In a professional context it often happens that private or
+                                                corporate clients corder a publication to be made.</p>
+                                            <a href="#" class="comment-reply-link">
+                                                <i class="lni lni-reply"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                </div>-->
+                <!--Blog Reply-->
+                <!--<div class="contact-01">
+                    <div class="contact my-5">
+                        <div class="contact-form">
+                            <h3 class="text-left mb-4">Leave a comment</h3>
+                            <div class="contact-box">
+                                <div class="contact-form">
+                                    <form id="contactForm">
+                                        <div class="row">
+                                            <div class="col-lg-6 form-item">
+                                                <div class="form-group">
+                                                    <input name="name" id="name" type="text" class="form-control"
+                                                        placeholder="First name*" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 form-item">
+                                                <div class="form-group">
+                                                    <input name="email" id="email" type="email" class="form-control"
+                                                        placeholder="Your email*" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 form-item">
+                                                <div class="form-group">
+                                                    <textarea name="comments" id="comments" rows="4"
+                                                        class="form-control textarea"
+                                                        placeholder="Your message..."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 text-left">
+                                                <button type="submit" class="pill-button-01 border-0"
+                                                    id="submit-btn">Send Message</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+
+            </div>
+            <aside class="col-lg-4 sidebar col-sticky">
+                <div class="sidebar-wrapper">
+                    <!--Search-->
+                    <div class="search-boxes">
+                        <div class="search">
+                            <form>
+                                <div class="position-relative  form-group">
+                                    <input type="text" placeholder="Enter your keywords..." name="search">
+                                    <button type="submit" class="btn">
+                                        <i class="lni lni-search-alt"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="aside-contents">
+                        <!-- Categories -->
+                        <div class="tag-box pb-6">
+                            <div class="aside-title">
+                                <h6>Categoría/as</h6>
+                            </div>
+                            <div class="tagcloud">
+                                {% for categoria in post.categorias.all %}
+                                <a href="{% url 'Categorias' categoria.id %} ">
+                                    {{categoria.nombre}}
+                                    <!--<span>{{post.categorias.count}}</span>&nbsp;-->
+                                </a>
+                                {% endfor%}
+                            </div>
+                        </div>
+                        <!-- Recent Post -->
+                        <div class="aside-box">
+                            <div class="aside-title">
+                                <h6>Publicación reciente</h6>
+                            </div>
+                            <div class="post-box">
+                                <!-- Items -->
+                                <div class="post-list">
+                                    <div class="post-image">
+                                        <a href="javascript:void(0);">
+                                            <img src="{{post.image.url}}" alt="/">
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <h5 class="post-title">
+                                            <a href="javascript:void(0);">{{post.titulo}}</a>
+                                        </h5>
+                                        <p class="blog-date">Publicado hace:<br>{{post.created|timesince}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Archive -->
+                        <div class="aside-box">
+                            <div class="aside-contents">
+                                <div class="aside-title">
+                                    <h6>Archive</h6>
+                                </div>
+                                <div class="aside-item">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a href="#">June 2019</a>
+                                            <span>11</span>
+                                        </li>                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Gallery -->
+                        <!--<div class="aside-box">
+                            <div class="aside-title">
+                                <h6>Gallery</h6>
+                            </div>
+                            <ul class="list-inline image-gallery">
+                                <li class="list-inline-item">
+                                    <img src="http://placehold.it/300x300" alt="/">
+                                </li>
+                            </ul>
+                        </div>-->
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+<!--  blog Single End  -->
+<!--   Blog End   -->
+{% endblock content %}

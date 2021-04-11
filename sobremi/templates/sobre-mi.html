@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% block title %}Sobre Mi{% endblock %}
+{% load static %}
+{% block content %}
+<section id="about" class="about-01 py-6">
+    <div class="container">
+        {% for about in about %}
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-image">
+                    <img src="{{about.image.url}}" alt="{{about.titulo}}" title="{{about.titulo}}">
+                </div>
+            </div>
+            <div class="col-lg-6 mt-4 mt-lg-0">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="title-box text-left">
+                            <h6>Sobre Mi</h6>
+                            <h3>{{about.titulo}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <p class="about-text">{{about.description}}</p>
+                <div id="count-up">
+                    <div class="counted-box-01">
+                        <div class="row">
+                            <!-- Item-01 -->
+                            <div class="col-4 count-item">
+                                <div class="count-content">
+                                    <span class="timer count-number" data-from="0" data-to="{{sobremi.proyectos}}"
+                                        data-speed="5000">{{about.proyectos}}</span>
+                                    <p class="mb-0">Proyecto terminado</p>
+                                </div>
+                            </div>
+                            <!-- Item-03 -->
+                            <div class="col-4 count-item">
+                                <div class="count-content">
+                                    <span class="timer count-number" data-from="0" data-to="{{sobremi.clientes}}"
+                                        data-speed="5000">{{about.clientes}}</span>
+                                    <p class="mb-0">Cliente satisfechos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <!--   Skills Start   -->
+        <div class="skills-01">
+            <div class="row pt-6">
+                <div class="col-lg-6">
+                    <div class="title-box text-left">
+                        <h6>Mis Habilidades</h6>
+                        <h3>He podido experimentar y desarrollar habilidades con este tipo de aprendizaje .</h3>
+                    </div>
+                    <p class="mb-0">Estaba haciendo todo lo que estaba en mi poder para brindarme todas las experiencias
+                        para brindar productos rentables y
+                        de alta calidad para satisfacer a mis clientes en todo el mundo.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div id="skills">
+                        {% if habilidad %}
+                        {% for habilidad in habilidad %}
+                        <div class="col-lg-12 skill-box">
+                            <div class="skillbar clearfix " data-percent="{{habilidad.percentaje}}%">
+                                <div class="skillbar-title">
+                                    <span>{{habilidad.lenguaje}}</span>
+                                </div>
+                                <div class="skillbar-bar"></div>
+                                <div class="skill-bar-percent">
+                                    {{habilidad.percentaje}}%
+                                    <div class="arrow"></div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <div class="title-box text-left">
+                            <h5>No hay habilidades</h5>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--    Skills End    -->
+        <!--    Resume Start   -->
+        <div class="resume-01 pt-6">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-box">
+                        <h2>Resumen | CV</h3>
+                    </div>
+                </div>
+            </div>
+            <!--    TimeLine Start   -->
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <!--    Certificaciones Start   -->
+                    <h5 class="title-resume text-center">
+                        Certificaciones
+                    </h5>
+                    <div class="timeline-boxes">
+                        <!--    Items  -->
+                        {% if certificacion %}
+                        {% for certificacion in certificacion %}
+                        <div class="timeline-boxe">
+                            <div class="timeline-icon"></div>
+                            <div class="timeline-contents">
+                                <div class="time-line-header">
+                                    <h6 class="timeline-title">{{certificacion.titulo}}</h6>
+                                    <p class="timeline-year">{{certificacion.fecha}}</p>
+                                </div>
+                                <div class="timeline-content">
+                                    <p class="mb-0">{{certificacion.parafo}}</p>
+                                    <a class="timeline-year" href="{{certificacion.url}}" target="_blank">Ver</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <div class="title-box text-center">
+                            <h5>No hay certificaciones</h5>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <!--    Experiencia Start   -->
+                    <h5 class="title-resume text-center">
+                        Experiencia
+                    </h5>
+                    <div class="timeline-boxes">
+                        <!--    Items  -->
+                        {% if experiencia %}
+                        {% for experiencia in experiencia %}
+                        <div class="timeline-boxe">
+                            <div class="timeline-icon"></div>
+                            <div class="timeline-contents">
+                                <div class="time-line-header">
+                                    <h6 class="timeline-title">{{experiencia.titulo}}</h6>
+                                    <p class="timeline-year">{{experiencia.fecha}}</p>
+                                </div>
+                                <div class="timeline-content">
+                                    <p class="mb-0">{{experiencia.parafo}}</p>
+                                    <a class="timeline-year" href="{{experiencia.url}}" target="_blank">Ver</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <div class="title-box text-center">
+                            <h5>No hay experiencia</h5>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <!--    TimeLine End   -->
+            </div>
+            <!--     Resume End    -->
+        </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% block title %}Proyectos{% endblock %}
+<section id="portfolio" class="portfolio-01 py-6">
+    <div class="container">
+        <div class="portfolio-items row">
+            <!-- Title -->
+            <div class="col-md-6 portfolio-item mb-4">
+                <div class="title-box text-left">
+                    <h4 class="title-header">Estos son mis trabajando</h4>
+                </div>
+            </div>
+            <!-- Item -->
+
+            {% for job in job %}
+            <div class="col-md-6 portfolio-item seo">
+                <div class="portfolio-box">
+                    <div class="portfolio-img">
+                        <img src="{{job.image.url}} " alt="{{job.titulo}}" title="{{job.titulo}}">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h5 class="portfolio-category">{{job.titulo}}</h5>
+                            <div class="portfolio-icon">
+                                <a href="{{job.get_absolute_url}}">
+                                    <i class="fas fa-link"></i>
+                                </a>
+                                <a href="{{job.image.url}}" class="js-zoom-gallery">
+                                    <i class="fas fa-search-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

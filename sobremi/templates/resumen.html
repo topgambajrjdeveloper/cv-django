@@ -1,0 +1,43 @@
+{% load static %}
+{% block content %}
+<div class="resume-01 pt-6">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="title-box">
+                <h2>CV</h3>
+            </div>
+        </div>
+    </div>
+    <!--    TimeLine Start   -->
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <h5 class="title-resume text-center">
+                Certificaciones
+            </h5>
+            {% for certificacion in certificaciones %}
+            <div class="timeline-boxes">
+                <!--    Items  -->
+                <div class="timeline-boxe">
+                    <div class="timeline-icon"></div>
+                    <div class="timeline-contents">
+                        <div class="time-line-header">
+                            <h6 class="timeline-title">{{certificacion.titulo}}</h6>
+                            <p class="timeline-year">{{certificacion.fecha}}</p>
+                        </div>
+                        <div class="timeline-content">
+                            <p class="mb-0">Certificación de desarrollador, que representa aproximadamente 300
+                                horas de trabajo de curso.</p>
+                            <a class="timeline-year"
+                                href="https://freecodecamp.org/certification/fcc87d83ff6-2c46-41f9-8eff-23c40cd1f727/responsive-web-design"
+                                target="_blank">Ver</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% include 'experiencia.html' %}
+    </div>
+    <!--    TimeLine End   -->
+</div>
+{% endblock content %}

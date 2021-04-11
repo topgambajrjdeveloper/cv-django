@@ -1,0 +1,16 @@
+{% load static %}
+{% block content %}
+    <div class="search-boxes">
+        <div class="search">
+            <form>
+                <div class="position-relative form-group" action="/buscar/" method="GET">
+                    <input type="text" placeholder="Programación...: Reactjs" name="blog">
+                    <button type="submit" class="btn">
+                        <i class="lni lni-search-alt"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+

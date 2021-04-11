@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% block title %}Trabajos{% endblock %}
+<section id="portfolio" class="portfolio-01 py-6">
+    <div class="container">
+        <div class="portfolio-items row">
+            <!-- Title -->
+            <div class="col-md-6 portfolio-item mb-4">
+                <div class="title-box text-left">
+                    <h3 class="title-header">Mis trabajos</h3>
+                </div>
+            </div>
+            <!-- Item 01 -->
+            <div class="col-md-6 portfolio-item seo">
+                <div class="portfolio-box">
+                    <div class="portfolio-img">
+                        <img src="{% static 'img/facemoment.jpg' %}" alt="/">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h5 class="portfolio-category">FaceMoment</h5>
+                            <div class="portfolio-icon">
+                                <a href="/">
+                                    <i class="fas fa-link"></i>
+                                </a>
+                                <a href="{% static 'img/facemoment.jpg' %}" class="js-zoom-gallery">
+                                    <i class="fas fa-search-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <!-- Item * -->
+            <div class="col-md-6 portfolio-item">
+                <div class="text-center">
+                    <a href="/" class="pill-button-01 position-relative">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

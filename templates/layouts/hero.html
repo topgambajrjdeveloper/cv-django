@@ -1,0 +1,35 @@
+{% load static %}
+{% block content %}
+<section class="hero-01 full-screen py-6" id="hero">
+    <div class="hero-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hero-content">
+                        <h1 class="mb-0">Hola, soy Julián Rodríguez</h1>
+                        <h2 class="base-color">Full Stack Developer Python Javascript</h2>
+                        <p class="mb-0">Diseñador web en España. Tengo una gran experiencia en el diseño y construcción de sitios
+                            web.</p>
+                        <ul class="pl-0 my-5">
+                            <li class="list-inline-item">
+                                <a href="https://github.com/topgambajrjdeveloper/" target="_blank">
+                                    <i class="fab fa-github fa-2x" style="color: #24292e;"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://twitter.com/DCordenadas" target="_blank">
+                                    <i class="fab fa-linkedin fa-2x"
+                                        style="color:#1da1f2 ;"></i></a>
+                            </li>
+                            <li class="list-inline-item"><a href="https://twitter.com/DCordenadas" target="_blank">
+                                <i class="fab fa-twitter fa-2x" style="color:#1da1f2 ;"></i></a>
+                            </li>
+                        </ul>
+                        <a href="{% static 'cv/cv-julian.pdf' %}" target="_blank" class="pill-button-01 mr-3">Descargar Cv</a>
+                        <a href="{% url 'Contacto' %}" class="black-pill-button-01 to-contact">Contactar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
