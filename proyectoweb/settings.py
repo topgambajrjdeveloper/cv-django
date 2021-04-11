@@ -55,6 +55,11 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     'proyectoweb',
+    'blog.apps.BlogConfig',
+    'contacto.apps.ContactoConfig',
+    'inicio.apps.InicioConfig',
+    'sobremi.apps.SobremiConfig',
+    'trabajos.apps.TrabajosConfig',
 ]
 
 MIDDLEWARE = [
