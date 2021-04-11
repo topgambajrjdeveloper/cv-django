@@ -120,8 +120,4 @@ $ heroku logs: Recupera el historial (logs) de nuestra app; genial por si vemos 
 
 $ heroku open: Abrirá tu proyecto/web.
 
-$ heroku ps:scale web=X worker=Y: - reemplazar la X con el número de web dynos necesarios; cuanto más alto ese número, mayor coste y mejor rendimiento - reemplazar Y con el número de trabajdores necesarios; cuanto más alto ese número, mayor coste y mejor rendimiento - Más sobre scaling aquí.
-
-Suscríbete a nuestro Canal de YouTube y únete a nuestra comunidad dónde encontrarás muchos MÁS CURSOS de DJANGO.
-
-Saludos!
+$ heroku ps:scale web=X worker=Y: - reemplazar la X con el número de web dynos necesarios; cuanto más alto ese número, mayor coste y mejor rendimiento - reemplazar Y con el número de trabajdores necesarios; cuanto más alto ese número, mayor coste y mejor rendimiento
