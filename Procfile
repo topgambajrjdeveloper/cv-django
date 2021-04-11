@@ -1,0 +1,1 @@
+web: gunicorn devcordenadas.wsgi --log-file -
