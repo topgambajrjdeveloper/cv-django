@@ -72,7 +72,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'proyectoweb.urls'
-TEMPLATES_DIRS = os.path.join(BASE_DIR, '/templates')
+TEMPLATES_DIRS = os.path.join(BASE_DIR, r'\templates')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
