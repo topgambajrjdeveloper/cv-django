@@ -29,7 +29,7 @@ SECRET_KEY = config('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['*', 'https://polar-falls-42036.herokuapp.com']
+ALLOWED_HOSTS = ['*', 'polar-falls-42036.herokuapp.com']
 CORS_ORIGIN_ALLOW_ALL = False
 
 
